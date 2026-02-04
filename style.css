@@ -1,0 +1,133 @@
+/* ====== RESET & BASE ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #111827;
+  --bg-input: #020617;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ====== MAIN CARD ====== */
+.generator {
+  width: 100%;
+  max-width: 52rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid var(--border-soft);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ====== PROMPT AREA ====== */
+.prompt-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ====== TEXTAREA ====== */
+#prompt-input {
+  width: 100%;
+  min-height: 8rem;
+  padding: 1rem 1.2rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-soft);
+  border-radius: 0.75rem;
+  color: var(--text-main);
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#prompt-input::placeholder {
+  color: var(--text-muted);
+}
+
+#prompt-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.35);
+}
+
+/* ====== BUTTON ====== */
+#generate-image {
+  align-self: flex-end;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.65rem;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: white;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+  box-shadow: 0 5px 4px rgba(79, 70, 229, 0.55);
+}
+
+#generate-image:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 3px rgba(79, 70, 229, 0.55);
+}
+
+#generate-image:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* ====== RESULTS PLACEHOLDER ====== */
+.results {
+  margin-top: 2rem;
+  min-height: 10rem;
+  border-radius: 1rem;
+  border: 1px dashed var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 640px) {
+  .generator {
+    padding: 1.5rem;
+  }
+
+  #generate-image {
+    width: 100%;
+    align-self: stretch;
+  }
+}
