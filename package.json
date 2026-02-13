@@ -1,0 +1,20 @@
+{
+  "name": "ai-image-generator",
+  "version": "1.0.0",
+  "description": "A clean and modern frontend interface for an AI Image Generator.  \r This project focuses on a polished UI/UX using semantic HTML and modern CSS styling.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/inference": "^4.13.12",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  }
+}

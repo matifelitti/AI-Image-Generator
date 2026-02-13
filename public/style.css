@@ -29,6 +29,9 @@ body {
 
 /* ====== MAIN CARD ====== */
 .generator {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 100%;
   max-width: 52rem;
   background: linear-gradient(
@@ -81,6 +84,8 @@ body {
 
 /* ====== BUTTON ====== */
 #generate-image {
+  position: relative;
+  z-index: 2;
   align-self: flex-end;
   padding: 0.65rem 1.6rem;
   font-size: 0.95rem;
@@ -118,6 +123,27 @@ body {
   justify-content: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+/* ====== GENERATED IMAGE ====== */
+.generated-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* ====== IMAGE APPEAR ANIMATION ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ====== RESPONSIVE ====== */
